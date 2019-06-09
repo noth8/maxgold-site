@@ -1,0 +1,11 @@
+mixin li(link, menuName)
+	li.nav-item
+		a.nav-link.js-scroll-trigger(href=link)= menuName
+
+nav#mNav.navbar.navbar-expand.navbar-light.navbar-shrink.fixed-top
+	.container
+		#navbarResponsive.collapse.navbar-collapse
+			ul.navbar-nav.ml-auto
+				+li('#about', 'About')
+				+li('#services', 'Services')
+				+li('#contact', 'Contact')
