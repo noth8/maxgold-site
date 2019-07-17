@@ -112,7 +112,6 @@ const BOOTSTRAP_ENABLED = true;
 const BOOTSTRAP_CUSTOM_SOURCE = true;
 const FONT_AWESOME_ENABLED = true;
 const FONT_AWESOME_CUSTOM_SOURCE = true;
-const AUTOPREFIXER_BROWSER_LIST = "last 2 versions";
 const IMAGE_ENCODER_GUETZLI = false;
 const IMAGE_COMPRESSION_RATE = 84;
 
@@ -293,9 +292,7 @@ function mergeStyles() {
     .pipe(
       gulpIf(
         isProduction,
-        autoprefixer({
-          browsers: AUTOPREFIXER_BROWSER_LIST,
-        }),
+        autoprefixer(),
         sourcemaps.init(),
       ),
     )
